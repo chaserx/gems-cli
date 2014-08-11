@@ -49,13 +49,14 @@ command :search do |c|
     answer = ask("#{choices} ", String) do |q|
                q.echo      = false
                q.case      = :downcase
-               q.character = false
+               q.character = true
                q.validate  = /\A[0-9]|n|q\Z/
              end
 
     case answer
-    when ("0".."9").cover?(answer)
-      say answer
+    when ("0".."9")
+      Clipboard.copy "gem '#{search_results[answer.to_i]['name']}', '~> #{search_results[answer.to_i]['version']}'"
+      say "Copied to clipboard!"
     when 'n'
       say answer
     when 'q'
