@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     gems-cli (0.0.1)
+      clipboard (= 1.0.5)
       gems (= 0.8.3)
       gli (= 2.12.0)
       highline (= 1.6.21)
@@ -10,6 +11,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    clipboard (1.0.5)
     gems (0.8.3)
     gli (2.12.0)
     highline (1.6.21)
