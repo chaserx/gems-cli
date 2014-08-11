@@ -24,4 +24,5 @@ spec = Gem::Specification.new do |s|
   s.add_runtime_dependency('highline', '1.6.21')
   s.add_runtime_dependency('will_paginate', '3.0.7')
   s.add_runtime_dependency('clipboard', '1.0.5')
+  s.add_runtime_dependency('rainbow', '2.0.0')
 end
