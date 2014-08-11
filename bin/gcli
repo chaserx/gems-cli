@@ -45,7 +45,7 @@ command :search do |c|
       puts "#{iteration}: gem '#{result['name']}', '~> #{result['version']}'"
       iteration += 1
     end
-    choices = "select from 0..9, n(ext), or q(uit)"
+    choices = "select from 0..9, (n)ext, or (q)uit"
     answer = ask("#{choices} ", String) do |q|
                q.echo      = false
                q.case      = :downcase
