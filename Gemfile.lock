@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    gems-cli (0.0.1)
+      gems (= 0.8.3)
+      gli (= 2.12.0)
+      highline (= 1.6.21)
+      will_paginate (= 3.0.7)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    gems (0.8.3)
+    gli (2.12.0)
+    highline (1.6.21)
+    json (1.8.1)
+    rake (10.3.2)
+    rdoc (4.1.1)
+      json (~> 1.4)
+    will_paginate (3.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gems-cli!
+  rake
+  rdoc
