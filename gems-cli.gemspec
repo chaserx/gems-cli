@@ -15,7 +15,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.rdoc','gems-cli.rdoc']
   s.rdoc_options << '--title' << 'gems-cli' << '--main' << 'README.rdoc' << '-ri'
   s.bindir = 'bin'
-  s.executables << 'gcli'
+  s.executables << 'gems'
   s.add_development_dependency('rake')
   s.add_development_dependency('rdoc')
 

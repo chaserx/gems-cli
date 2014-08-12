@@ -5,7 +5,7 @@ lookup rubygems on the command line
 
 ## Usage
 
-`gcli search chase` or `gcli s chase`
+`gems search chase` or `gems s chase`
 
 ```
 running search for chase...
