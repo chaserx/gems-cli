@@ -5,9 +5,9 @@ spec = Gem::Specification.new do |s|
   s.version = GemsCli::VERSION
   s.author = 'Chase Southard'
   s.email = 'chase.southard@gmail.com'
-  s.homepage = 'http://your.website.com'
+  s.homepage = 'https://github.com/chaserx/gems-cli'
   s.platform = Gem::Platform::RUBY
-  s.summary = 'Extends gems with a command line interface'
+  s.summary = 'Search rubygems.org from the command line.'
   s.files = `git ls-files`.split("
 ")
   s.require_paths << 'lib'

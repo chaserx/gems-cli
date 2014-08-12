@@ -4,7 +4,7 @@ require 'will_paginate/collection'
 require 'will_paginate/array'
 require 'highline/import'
 require 'clipboard'
-require 'rainbow'
+require 'rainbow/ext/string'
 
 # Add requires for other files you add to your project here, so
 # you just need to require this one file in your bin file
