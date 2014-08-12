@@ -31,10 +31,10 @@ command :search do |c|
 
     # raise "that command made no sense"
     if args[0].nil? || args[0].empty?
-      raise ArgumentError, 'Please supply a gem name.'
+      raise ArgumentError, 'Please supply a search term.'
     end
 
-    puts "running search for #{args[0]}...".color(:green)
+    puts "Running your search for #{args[0]}...".color(:green)
     search_results = Gems.search args[0]
     per_page = 10
     iteration = 0
@@ -44,7 +44,7 @@ command :search do |c|
     end
     choices = "select from 0..9, (n)ext, or (q)uit \n"
     answer = ask(choices, String) do |q|
-               q.echo      = true
+               q.echo      = false
                q.case      = :downcase
                q.character = true
                q.validate  = /\A[0-9]|n|q\Z/
@@ -55,11 +55,11 @@ command :search do |c|
       Clipboard.copy "gem '#{search_results[answer.to_i]['name']}', '~> #{search_results[answer.to_i]['version']}'"
       puts "Copied to clipboard!".color(:green)
     when 'n'
-      puts answer
+      puts answer.chomp
     when 'q'
-      puts 'bye bye'
+      puts 'Later.'
     else
-      puts 'unknown option'
+      puts "Sorry. Unknown option: #{answer.chomp}"
     end
   end
 end
