@@ -22,3 +22,8 @@ select from 0..7, or q(uit)
 ```
 
 `Copied to clipboard!`
+
+
+### TODO
+
+- tests
