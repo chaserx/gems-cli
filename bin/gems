@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'gli'
+require 'gems-cli'
 
 include GLI::App
 
