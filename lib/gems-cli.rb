@@ -1,7 +1,5 @@
 require 'gems-cli/version.rb'
 require 'gems'
-require 'will_paginate/collection'
-require 'will_paginate/array'
 require 'highline/import'
 require 'clipboard'
 require 'rainbow/ext/string'

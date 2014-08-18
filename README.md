@@ -1,7 +1,8 @@
 gems-cli
 ========
 
-lookup rubygems on the command line
+Using the [gems](https://github.com/rubygems/gems) gem to lookup Ruby Gems on
+the command line. Copy formatted gem details for your project's Gemfile.
 
 ## Usage
 
@@ -17,7 +18,7 @@ running search for chase...
 5: gem 'exemplor-chaser', '~> 0.0.2'
 6: gem 'rail_chaser', '~> 0.0.3'
 7: gem 'rack-in-app-purchase', '~> 0.1.1'
-select from 0..9, n(ext), or q(uit)
+select from 0..7, or q(uit)
 ```
 
 `Copied to clipboard!`

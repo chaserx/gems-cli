@@ -20,13 +20,14 @@ arguments :strict
 
 desc 'Search Rubygems.org for a gem'
 arg_name 'Name of a gem'
-command :search do |c|
-  c.desc 'search'
-  c.switch :s
+command [:search, :s] do |c|
+  c.desc 'Feeling lucky, punk?'
+  c.switch [:l, :lucky]
 
   c.desc 'Number of results returned'
   c.default_value 10
   c.flag :n
+
   c.action do |global_options,options,args|
 
     # raise "that command made no sense"
@@ -34,28 +35,29 @@ command :search do |c|
       raise ArgumentError, 'Please supply a search term.'
     end
 
+    result_limit = options[:l] ? 0 : options[:n].to_i
+
     puts "Running your search for #{args[0]}...".color(:green)
     search_results = Gems.search args[0]
-    per_page = 10
     iteration = 0
-    search_results.paginate(per_page: per_page).each do |result|
+    search_results[0..result_limit].each do |result|
       puts "#{iteration}: gem '#{result['name']}', '~> #{result['version']}'"
       iteration += 1
     end
-    choices = "select from 0..9, (n)ext, or (q)uit \n"
+    choices = "select from 0..#{search_results.size - 1} or (q)uit \n".color(:green)
     answer = ask(choices, String) do |q|
-               q.echo      = false
                q.case      = :downcase
-               q.character = true
-               q.validate  = /\A[0-9]|n|q\Z/
+               q.validate  = /\A\d|q\Z/
              end
 
     case answer
-    when ("0".."9")
-      Clipboard.copy "gem '#{search_results[answer.to_i]['name']}', '~> #{search_results[answer.to_i]['version']}'"
-      puts "Copied to clipboard!".color(:green)
-    when 'n'
-      puts answer.chomp
+    when /\d/
+      if search_results[answer.to_i]
+        Clipboard.copy "gem '#{search_results[answer.to_i]['name']}', '~> #{search_results[answer.to_i]['version']}'"
+        puts "Copied to clipboard!".color(:green)
+      else
+        puts "Your choice, #{answer}, is not in the list 0..#{search_results.size - 1}"
+      end
     when 'q'
       puts 'Later.'
     else

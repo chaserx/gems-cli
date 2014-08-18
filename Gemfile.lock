@@ -7,7 +7,6 @@ PATH
       gli (= 2.12.0)
       highline (= 1.6.21)
       rainbow (= 2.0.0)
-      will_paginate (= 3.0.7)
 
 GEM
   remote: https://rubygems.org/
@@ -21,7 +20,6 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
-    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
