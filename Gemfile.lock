@@ -4,27 +4,46 @@ PATH
     gems-cli (0.0.1)
       clipboard (= 1.0.5)
       gems (= 0.8.3)
-      gli (= 2.12.0)
+      gli (= 2.12.2)
       highline (= 1.6.21)
       rainbow (= 2.0.0)
+      will_paginate (= 3.0.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     clipboard (1.0.5)
+    coderay (1.1.0)
+    columnize (0.8.9)
+    debugger-linecache (1.2.0)
     gems (0.8.3)
-    gli (2.12.0)
+    gli (2.12.2)
     highline (1.6.21)
     json (1.8.1)
+    method_source (0.8.2)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (2.0.0)
+      byebug (~> 3.4)
+      pry (~> 0.10)
     rainbow (2.0.0)
     rake (10.3.2)
-    rdoc (4.1.1)
+    rdoc (4.1.2)
       json (~> 1.4)
+    slop (3.6.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   gems-cli!
-  rake
-  rdoc
+  pry-byebug (~> 2.0.0)
+  rake (~> 10.3.2)
+  rdoc (~> 4.1.2)
