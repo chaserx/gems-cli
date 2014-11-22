@@ -1,6 +1,0 @@
-= gems-cli
-
-Describe your project here
-
-:include:gems-cli.rdoc
-
