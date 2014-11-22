@@ -4,57 +4,67 @@ require 'gems-cli'
 
 include GLI::App
 
-program_desc 'Interact with Rubygems.org from the command line'
+program_desc 'Interact with Rubygems.org from the command line. Yay!'
 
 version GemsCli::VERSION
 
 # Use argument validation
 arguments :strict
+subcommand_option_handling :normal
 
 desc 'Search Rubygems.org for a gem'
 arg_name 'Name of a gem'
 command [:search, :s] do |c|
-  c.desc 'Feeling lucky, punk?'
-  c.switch [:l, :lucky]
-
-  c.desc 'Number of results returned'
+  c.desc 'Number of results returned per page'
   c.default_value 10
   c.flag :n
 
   c.action do |global_options,options,args|
-
-    # raise "that command made no sense"
     if args[0].nil? || args[0].empty?
       raise ArgumentError, 'Please supply a search term.'
     end
 
-    result_limit = options[:l] ? 0 : options[:n].to_i
-
     puts "Running your search for #{args[0]}...".color(:green)
-    search_results = Gems.search args[0]
-    iteration = 0
-    search_results[0..result_limit].each do |result|
-      puts "#{iteration}: gem '#{result['name']}', '~> #{result['version']}'"
-      iteration += 1
-    end
-    choices = "select from 0..#{search_results.size - 1} or (q)uit \n".color(:green)
-    answer = ask(choices, String) do |q|
-               q.case      = :downcase
-               q.validate  = /\A\d|q\Z/
-             end
 
-    case answer
-    when /\d/
-      if search_results[answer.to_i]
-        Clipboard.copy "gem '#{search_results[answer.to_i]['name']}', '~> #{search_results[answer.to_i]['version']}'"
-        puts "Copied to clipboard!".color(:green)
+    search_results = Gems.search args[0]
+    limit = options[:n].to_i
+    paged_results = Paginator.new(ary: search_results, per_page: limit)
+
+    paged_results.first_page.each_with_index do |e, i|
+      puts "#{i}: gem '#{e['name']}', '~> #{e['version']}'"
+    end
+
+    @answer = ''
+    until @answer == 'q'
+      puts "\nPage: #{paged_results.page}/#{paged_results.pages}".color(:green)
+      choices = "Select from 0..#{paged_results.per_page - 1}, (n)ext, (p)revious, or (q)uit #=> ".color(:green)
+      @answer = ask(choices, String) do |q|
+                 q.case      = :downcase
+                 q.validate  = /\A\d+|q|n|p\Z/
+               end
+
+      case @answer
+      when /\d+/
+        gem_list = paged_results.current_page
+        if gem_list[@answer.to_i]
+          Clipboard.copy "gem '#{gem_list[@answer.to_i]['name']}', '~> #{gem_list[@answer.to_i]['version']}'"
+          puts "Copied #{gem_list[@answer.to_i]['name']} to your clipboard!".color(:green)
+        else
+          puts "Your choice, #{@answer}, is not in the list 0..#{gem_list.size - 1}"
+        end
+      when 'n'
+        paged_results.next_page.each_with_index do |e, i|
+          puts "#{i}: gem '#{e['name']}', '~> #{e['version']}'"
+        end
+      when 'p'
+        paged_results.previous_page.each_with_index do |e, i|
+          puts "#{i}: gem '#{e['name']}', '~> #{e['version']}'"
+        end
+      when 'q'
+        puts 'Later.'
       else
-        puts "Your choice, #{answer}, is not in the list 0..#{search_results.size - 1}"
+        puts "Sorry. Unknown option: #{@answer.chomp}"
       end
-    when 'q'
-      puts 'Later.'
-    else
-      puts "Sorry. Unknown option: #{answer.chomp}"
     end
   end
 end
