@@ -17,11 +17,10 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options << '--title' << 'gems-cli' << '--main' << 'README.rdoc' << '-ri'
   s.bindir = 'bin'
   s.executables << 'gems'
-  s.required_ruby_version = '>= 1.9'
+  s.required_ruby_version = '>= 2.0'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
   s.add_development_dependency('rake', '~> 10.3.2')
   s.add_development_dependency('rdoc', '~> 4.1.2')
-  s.add_development_dependency('pry-byebug', '~> 2.0.0')
   s.add_development_dependency('rspec', '~> 3.1.0')
 
   s.add_runtime_dependency('gli','2.12.2')
