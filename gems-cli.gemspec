@@ -16,7 +16,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.rdoc','gems-cli.rdoc']
   s.rdoc_options << '--title' << 'gems-cli' << '--main' << 'README.rdoc' << '-ri'
   s.bindir = 'bin'
-  s.executables << 'gems.rb'
+  s.executables << 'gems'
   s.required_ruby_version = '>= 1.9'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
   s.add_development_dependency('rake', '~> 10.3.2')
