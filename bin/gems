@@ -36,7 +36,7 @@ command [:search, :s] do |c|
 
     @answer = ''
     until @answer == 'q'
-      puts "\nPage: #{paged_results.page}/#{paged_results.pages}".color(:green)
+      puts "Page: #{paged_results.page}/#{paged_results.pages}\n".color(:green)
       choices = "Select from 0..#{paged_results.per_page - 1}, (n)ext, (p)revious, or (q)uit #=> ".color(:green)
       @answer = ask(choices, String) do |q|
                  q.case      = :downcase
@@ -49,6 +49,7 @@ command [:search, :s] do |c|
         if gem_list[@answer.to_i]
           Clipboard.copy "gem '#{gem_list[@answer.to_i]['name']}', '~> #{gem_list[@answer.to_i]['version']}'"
           puts "Copied #{gem_list[@answer.to_i]['name']} to your clipboard!".color(:green)
+          break
         else
           puts "Your choice, #{@answer}, is not in the list 0..#{gem_list.size - 1}"
         end
