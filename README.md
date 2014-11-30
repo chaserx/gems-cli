@@ -1,6 +1,8 @@
 gems-cli
 ========
 
+[![Build Status](https://travis-ci.org/chaserx/gems-cli.svg?branch=master)](https://travis-ci.org/chaserx/gems-cli)
+
 Using the [gems](https://github.com/rubygems/gems) gem to lookup Ruby Gems on
 the command line. Copy formatted gem details for your project's Gemfile.
 
