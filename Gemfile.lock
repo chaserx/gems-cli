@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gems-cli (0.1.3a)
+    gems-cli (0.1.3)
       clipboard (= 1.0.5)
       gems (= 0.8.3)
       gli (= 2.12.2)
