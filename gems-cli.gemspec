@@ -12,21 +12,19 @@ spec = Gem::Specification.new do |s|
   s.license = 'MIT'
   s.files = `git ls-files`.split(" ")
   s.require_paths << 'lib'
-  s.has_rdoc = true
-  s.extra_rdoc_files = ['README.rdoc','gems-cli.rdoc']
-  s.rdoc_options << '--title' << 'gems-cli' << '--main' << 'README.rdoc' << '-ri'
   s.bindir = 'bin'
   s.executables << 'gems'
   s.required_ruby_version = '>= 2.0'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
-  s.add_development_dependency('rake', '~> 10.3.2')
-  s.add_development_dependency('rdoc', '~> 4.1.2')
-  s.add_development_dependency('rspec', '~> 3.1.0')
 
-  s.add_runtime_dependency('gli','2.12.2')
-  s.add_runtime_dependency('gems','0.8.3')
-  s.add_runtime_dependency('highline', '1.6.21')
-  s.add_runtime_dependency('clipboard', '1.0.5')
-  s.add_runtime_dependency('rainbow', '2.0.0')
-  s.add_runtime_dependency('will_paginate', '3.0.7')
+  s.add_development_dependency 'rake', '~> 10.3.2'
+  s.add_development_dependency 'rspec', '~> 3.1.0'
+  s.add_development_dependency 'yard', '~> 0.8.7.6'
+
+  s.add_runtime_dependency 'gli','2.12.2'
+  s.add_runtime_dependency 'gems','0.8.3'
+  s.add_runtime_dependency 'highline', '1.6.21'
+  s.add_runtime_dependency 'clipboard', '1.0.5'
+  s.add_runtime_dependency 'rainbow', '2.0.0'
+  s.add_runtime_dependency 'will_paginate', '3.0.7'
 end
