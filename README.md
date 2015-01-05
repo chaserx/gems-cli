@@ -6,6 +6,12 @@ gems-cli
 Using the [gems](https://github.com/rubygems/gems) gem to lookup Ruby Gems on
 the command line. Copy formatted gem details for your Gemfile.
 
+## Installation
+
+```bash
+gem install gems-cli
+```
+
 ## Usage
 
 `gems search chase` or `gems s chase`
@@ -30,6 +36,10 @@ Copied purchase to your clipboard!
 pbpaste #=> gem 'purchase', '~> 1.0.15'
 ```
 
-### TODO
+## TODO
 
 - needs [Aruba](https://github.com/cucumber/aruba) tests for the CLI itself.
+
+## Contributing
+
+Pull requests welcome! Please see the [contribution guide](CONTRIBUTING.md).
