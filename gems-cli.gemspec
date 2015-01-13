@@ -20,6 +20,7 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 10.3.2'
   s.add_development_dependency 'rspec', '~> 3.1.0'
   s.add_development_dependency 'yard', '~> 0.8.7.6'
+  s.add_development_dependency 'simplecov', '~> 0.9.1'
 
   s.add_runtime_dependency 'gli','2.12.2'
   s.add_runtime_dependency 'gems','0.8.3'
