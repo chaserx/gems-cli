@@ -4,8 +4,8 @@ class Paginator
   attr_reader :pages, :total_entries
   attr_accessor :ary, :per_page, :page, :paged_results
 
-  def initialize(args={})
-    @ary = args[:ary] || Array.new
+  def initialize args={}
+    @ary = args[:ary] || []
     @page = 1
     @per_page = args[:per_page] || 10
     @paged_results = @ary.paginate(per_page: @per_page)

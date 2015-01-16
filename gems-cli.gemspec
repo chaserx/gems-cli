@@ -7,10 +7,16 @@ spec = Gem::Specification.new do |s|
   s.email = 'chase.southard@gmail.com'
   s.homepage = 'https://github.com/chaserx/gems-cli'
   s.platform = Gem::Platform::RUBY
-  s.summary = 'Search rubygems.org from the command line. Copy formatted gem details for your Gemfile.'
-  s.description = 'Search rubygems.org from the command line. Then you can copy formatted gem details for your Gemfile.'
+  s.summary = <<-END.gsub(/^ {14}/, '')
+              Search rubygems.org from the command line.
+              Copy formatted gem details for your Gemfile.
+              END
+  s.description = <<-END.gsub(/^ {18}/, '')
+                  Search rubygems.org from the command line.
+                  Then you can copy formatted gem details for your Gemfile.
+                  END
   s.license = 'MIT'
-  s.files = `git ls-files`.split(" ")
+  s.files = `git ls-files`.split(' ')
   s.require_paths << 'lib'
   s.bindir = 'bin'
   s.executables << 'gems'
@@ -21,6 +27,7 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.1.0'
   s.add_development_dependency 'yard', '~> 0.8.7.6'
   s.add_development_dependency 'simplecov', '~> 0.9.1'
+  s.add_development_dependency 'rubocop', '~> 0.28.0'
 
   s.add_runtime_dependency 'gli','2.12.2'
   s.add_runtime_dependency 'gems','0.8.3'
