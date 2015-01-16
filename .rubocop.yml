@@ -1,0 +1,481 @@
+# Cops (the rules) are based off of the Ruby community style-guide
+# https://github.com/bbatsov/ruby-style-guide
+
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - vendor/**/*
+    - bin/**/*
+    - Gemfile
+
+# Configuration parameters: AllowSafeAssignment.
+Lint/AssignmentInCondition:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/BlockAlignment:
+  Enabled: true
+
+Lint/ConditionPosition:
+  Enabled: false
+
+# Configuration parameters: AlignWith, SupportedStyles.
+Lint/DefEndAlignment:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/DeprecatedClassMethods:
+  Enabled: false
+
+Lint/ElseLayout:
+  Enabled: false
+
+# Configuration parameters: AlignWith, SupportedStyles.
+Lint/EndAlignment:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/SpaceBeforeFirstArg:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Lint/StringConversionInInterpolation:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Lint/UnusedBlockArgument:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Lint/UnusedMethodArgument:
+  Enabled: true
+
+Lint/UselessAccessModifier:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Lint/Void:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 140
+
+# Configuration parameters: CountComments.
+Metrics/ClassLength:
+  Max: 800
+
+Metrics/CyclomaticComplexity:
+  Max: 26
+
+# Configuration parameters: AllowURI, URISchemes.
+Metrics/LineLength:
+  AllowURI: true
+  Max: 90
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 90
+
+# Configuration parameters: CountKeywordArgs.
+Metrics/ParameterLists:
+  Max: 7
+
+Metrics/PerceivedComplexity:
+  Max: 22
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, Include.
+Rails/ActionFilter:
+  Enabled: true
+
+# Configuration parameters: Include.
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+# Configuration parameters: Include.
+Rails/Output:
+  Enabled: false
+
+# Configuration parameters: Include.
+Rails/ScopeArgs:
+  Enabled: false
+
+# Configuration parameters: Include.
+Rails/Validation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/AccessModifierIndentation:
+  Enabled: true
+
+Style/AccessorMethodName:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/AlignArray:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
+Style/AlignHash:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/AlignParameters:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/AndOr:
+  Enabled: true
+
+Style/AsciiComments:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/BlockComments:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/BlockEndNewline:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/Blocks:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/BracesAroundHashParameters:
+  Enabled: true
+
+# Configuration parameters: IndentWhenRelativeTo, SupportedStyles, IndentOneStep.
+Style/CaseIndentation:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/ClassCheck:
+  Enabled: true
+
+Style/ClassVars:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/ColonMethodCall:
+  Enabled: true
+
+# Configuration parameters: Keywords.
+Style/CommentAnnotation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/CommentIndentation:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/DefWithParentheses:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/DeprecatedHashMethods:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/DotPosition:
+  EnforcedStyle: trailing
+  Enabled: true
+
+Style/DoubleNegation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/ElseAlignment:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/EmptyLines:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/EmptyLiteral:
+  Enabled: true
+
+Style/EndOfLine:
+  Enabled: false
+
+Style/FileName:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/FormatString:
+  Enabled: false
+
+# Configuration parameters: MinBodyLength.
+Style/GuardClause:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/HashSyntax:
+  Enabled: true
+
+# Configuration parameters: MaxLineLength.
+Style/IfUnlessModifier:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/IndentArray:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/IndentHash:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/IndentationConsistency:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: Width.
+Style/IndentationWidth:
+  Enabled: true
+
+Style/Lambda:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: SupportedStyles.
+Style/LambdaCall:
+  Enabled: false
+  EnforcedStyle: braces
+
+# Cop supports --auto-correct.
+Style/LeadingCommentSpace:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/LineEndConcatenation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/MethodDefParentheses:
+  Enabled: true
+  # Valid values are: require_parentheses, require_no_parentheses
+  EnforcedStyle: require_no_parentheses
+
+# Cop supports --auto-correct.
+Style/MultilineBlockLayout:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/NegatedIf:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/NumericLiterals:
+  MinDigits: 10
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowSafeAssignment.
+Style/ParenthesesAroundCondition:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: PreferredDelimiters.
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+# Configuration parameters: NamePrefix, NamePrefixBlacklist.
+Style/PredicateName:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/RedundantBegin:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowMultipleReturnValues.
+Style/RedundantReturn:
+  Enabled: true
+
+# Cop supports --auto-correct.
+Style/RedundantSelf:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/SelfAssignment:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowAsExpressionSeparator.
+Style/Semicolon:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/SignalException:
+  Enabled: false
+
+# Configuration parameters: Methods.
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/SingleLineMethods:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceAfterColon:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceAfterComma:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceAfterControlKeyword:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceAfterMethodName:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceAroundOperators:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/SpaceBeforeBlockBraces:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceBeforeComma:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceBeforeModifierKeyword:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceBeforeSemicolon:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SupportedStyles.
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/SpaceInsideParens:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: IgnoredMethods.
+Style/SymbolProc:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/TrailingBlankLines:
+  Enabled: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyleForMultiline, SupportedStyles.
+Style/TrailingComma:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/TrailingWhitespace:
+  Enabled: true
+
+Style/UnlessElse:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/VariableName:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/WhenThen:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: WordRegex.
+Style/WordArray:
+  MinSize: 25
