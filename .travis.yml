@@ -5,3 +5,6 @@ rvm:
   - 1.9.3
 install: bundle install
 script: bundle exec rspec spec
+addons:
+  code_climate:
+    repo_token: f4f5ac0341f0c4e782dbf0bf2e26e8b59d2056b79c9222b1a492d84134804fcd
