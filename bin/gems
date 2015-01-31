@@ -45,11 +45,17 @@ command [:search, :s] do |c|
     letters = ('a'..'c').to_a
     until @answer == 'q'
       puts "Page: #{paged_results.page}/#{paged_results.pages}\n".color(:green)
-      choices = ("Select from 0..#{paged_results.per_page - 1}, (n)ext, (p)revious, " +
-                 "(m)ore versions, or (q)uit #=> ").color(:green)
-      @answer = ask(choices, String) do |q|
+      can_get_more_versions = versions.size < 1
+      choices = "Select from 0..#{paged_results.per_page - 1}, (n)ext, (p)revious, "
+      choices += "(m)ore versions, " if can_get_more_versions
+      choices += "or (q)uit #=> "
+      @answer = ask(choices.color(:green), String) do |q|
         q.case = :downcase
-        q.validate  = /\A\d+\w?|q|n|m|p\Z/
+        if can_get_more_versions
+          q.validate = /\A\d+\w?|q|n|m|p\Z/
+        else
+          q.validate = /\A\d+\w?|q|n|p\Z/
+        end
       end
 
       case @answer
@@ -81,7 +87,7 @@ command [:search, :s] do |c|
           gem_name = e['name']
           versions[gem_name] = Gems.versions(gem_name).sort {|a, b|
             b['built_at'] <=> a['built_at']
-          }
+          }.reject {|v| v['number'] == e['version'] }
           versions[gem_name][0...letters.length].each_with_index do |v, j|
             version_data = {'name' => gem_name, 'version' => v['number']}
             display_gem version_data, "#{i}#{letters[j]}", '    '
