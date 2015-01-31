@@ -12,54 +12,88 @@ version GemsCli::VERSION
 arguments :strict
 subcommand_option_handling :normal
 
+def display_gem data, index, prefix=''
+  puts "#{prefix}#{index}: gem '#{data['name']}', '~> #{data['version']}'"
+end
+
 desc 'Search Rubygems.org for a gem'
 arg_name 'Name of a gem'
 command [:search, :s] do |c|
   c.desc 'Number of results returned per page'
-  c.default_value 10
+  c.default_value 7
   c.flag :n
 
-  c.action do |global_options,options,args|
-    if args[0].nil? || args[0].empty?
+  c.action do |global_options, options, args|
+    query = args[0]
+
+    if query.nil? || query.empty?
       raise ArgumentError, 'Please supply a search term.'
     end
 
-    puts "Running your search for #{args[0]}...".color(:green)
+    puts "Running your search for #{query}...".color(:green)
 
-    search_results = Gems.search args[0]
+    search_results = Gems.search(query)
     limit = options[:n].to_i
     paged_results = Paginator.new(ary: search_results, per_page: limit)
 
     paged_results.first_page.each_with_index do |e, i|
-      puts "#{i}: gem '#{e['name']}', '~> #{e['version']}'"
+      display_gem e, i
     end
 
     @answer = ''
+    versions = {}
+    letters = ('a'..'c').to_a
     until @answer == 'q'
       puts "Page: #{paged_results.page}/#{paged_results.pages}\n".color(:green)
-      choices = "Select from 0..#{paged_results.per_page - 1}, (n)ext, (p)revious, or (q)uit #=> ".color(:green)
+      choices = ("Select from 0..#{paged_results.per_page - 1}, (n)ext, (p)revious, " +
+                 "(m)ore versions, or (q)uit #=> ").color(:green)
       @answer = ask(choices, String) do |q|
-                 q.case      = :downcase
-                 q.validate  = /\A\d+|q|n|p\Z/
-               end
+        q.case = :downcase
+        q.validate  = /\A\d+\w?|q|n|m|p\Z/
+      end
 
       case @answer
-      when /\d+/
+      when /\d+\w?/
         gem_list = paged_results.current_page
-        if gem_list[@answer.to_i]
-          Clipboard.copy "gem '#{gem_list[@answer.to_i]['name']}', '~> #{gem_list[@answer.to_i]['version']}'"
-          puts "Copied #{gem_list[@answer.to_i]['name']} to your clipboard!".color(:green)
+        chosen_index, chosen_version = @answer.scan(/\d+|\D+/)
+        chosen_index = chosen_index.to_i
+        if chosen_gem=gem_list[chosen_index]
+          gem_name = chosen_gem['name']
+          gem_version = chosen_gem['version']
+          if chosen_version
+            gem_version_index = letters.index(chosen_version)
+            unless gem_version_index
+              puts 'Invalid gem and version choice'
+              next
+            end
+            selected_version = versions[gem_name][gem_version_index]
+            gem_version = selected_version['number']
+          end
+          Clipboard.copy "gem '#{gem_name}', '~> #{gem_version}'"
+          puts "Copied #{gem_name} #{gem_version} to your clipboard!".color(:green)
           break
         else
-          puts "Your choice, #{@answer}, is not in the list 0..#{gem_list.size - 1}"
+          puts "Your choice, #@answer, is not in the list 0..#{gem_list.size - 1}"
+        end
+      when 'm'
+        paged_results.current_page.each_with_index do |e, i|
+          display_gem e, i
+          gem_name = e['name']
+          versions[gem_name] = Gems.versions(gem_name).sort {|a, b|
+            b['built_at'] <=> a['built_at']
+          }
+          versions[gem_name][0...letters.length].each_with_index do |v, j|
+            version_data = {'name' => gem_name, 'version' => v['number']}
+            display_gem version_data, "#{i}#{letters[j]}", '    '
+          end
         end
       when 'n'
         paged_results.next_page.each_with_index do |e, i|
-          puts "#{i}: gem '#{e['name']}', '~> #{e['version']}'"
+          display_gem e, i
         end
       when 'p'
         paged_results.previous_page.each_with_index do |e, i|
-          puts "#{i}: gem '#{e['name']}', '~> #{e['version']}'"
+          display_gem e, i
         end
       when 'q'
         puts 'Later.'
@@ -70,7 +104,7 @@ command [:search, :s] do |c|
   end
 end
 
-pre do |global,command,options,args|
+pre do |global, command, options, args|
   # Pre logic here
   # Return true to proceed; false to abort and not call the
   # chosen command
@@ -79,7 +113,7 @@ pre do |global,command,options,args|
   true
 end
 
-post do |global,command,options,args|
+post do |global, command, options, args|
   # Post logic here
   # Use skips_post before a command to skip this
   # block on that command only
