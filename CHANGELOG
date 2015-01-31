@@ -7,3 +7,5 @@ Version 0.1.0: adds pagination to search results
 Version 0.1.1: require at least ruby 1.9
 
 Version 0.1.4: update gemspec, remove rdoc for yard, add some more documentation
+
+Version 0.1.7: add support for getting gem versions
