@@ -94,10 +94,12 @@ command [:search, :s] do |c|
           end
         end
       when 'n'
+        versions = {}
         paged_results.next_page.each_with_index do |e, i|
           display_gem e, i
         end
       when 'p'
+        versions = {}
         paged_results.previous_page.each_with_index do |e, i|
           display_gem e, i
         end

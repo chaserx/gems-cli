@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class Paginator
   attr_reader :pages, :total_entries
   attr_accessor :ary, :per_page, :page, :paged_results
