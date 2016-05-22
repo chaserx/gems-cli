@@ -20,7 +20,7 @@ spec = Gem::Specification.new do |s|
   s.require_paths << 'lib'
   s.bindir = 'bin'
   s.executables << 'gems'
-  s.required_ruby_version = '>= 2.0'
+  s.required_ruby_version = '>= 2.1.9'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
 
   s.add_development_dependency 'bundler', '~> 1.11'
