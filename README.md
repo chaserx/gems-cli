@@ -64,12 +64,23 @@ pbpaste #=> gem 'purchase', '~> 1.0.15'
 
 ## TODO
 
-- needs [Aruba](https://github.com/cucumber/aruba) tests for the CLI itself.
+- needs [Aruba](https://github.com/cucumber/aruba) or similar tests for the CLI itself.
 
 ## Contributing
 
 Pull requests welcome! Please see the [contribution guide](CONTRIBUTING.md).
 
+## Development
+
+First, install development dependencies with `bundle install`.
+
+Run tests with `bundle exec rspec`.
+
+To install this gem onto your local machine, run `bundle exec rake install`.
+
+To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the .gem file to rubygems.org.
+
 ## Many thanks to the following contributors
 
 - [moneypenney](https://github.com/moneypenny)
+- [jdickey](https://github.com/jdickey)
