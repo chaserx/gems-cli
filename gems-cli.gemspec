@@ -24,8 +24,8 @@ spec = Gem::Specification.new do |s|
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
 
   s.add_development_dependency 'bundler', '~> 1.11'
-  s.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
-  s.add_development_dependency 'rspec', '~> 3.1' # '>= 3.1.0' would be redundant
+  s.add_development_dependency 'rake', '~> 11.1', '>= 11.1.2'
+  s.add_development_dependency 'rspec', '~> 3.4' # '>= 3.4.0' would be redundant
   s.add_development_dependency 'yard', '~> 0.8', '>= 0.8.7.6'
   s.add_development_dependency 'simplecov', '~> 0.11', '>= 0.11.2'
   s.add_development_dependency 'rubocop', '~> 0.40.0'
