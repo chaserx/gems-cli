@@ -28,6 +28,7 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.1' # '>= 3.1.0' would be redundant
   s.add_development_dependency 'yard', '~> 0.8', '>= 0.8.7.6'
   s.add_development_dependency 'simplecov', '~> 0.11', '>= 0.11.2'
+  s.add_development_dependency 'rubocop', '~> 0.40.0'
 
   s.add_runtime_dependency 'gli', '~> 2.12', '>= 2.12.2'
   s.add_runtime_dependency 'gems', '~> 0.8', '>= 0.8.3'
