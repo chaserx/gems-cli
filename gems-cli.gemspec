@@ -20,19 +20,20 @@ spec = Gem::Specification.new do |s|
   s.require_paths << 'lib'
   s.bindir = 'bin'
   s.executables << 'gems'
-  s.required_ruby_version = '>= 2.0'
+  s.required_ruby_version = '>= 2.1.9'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
 
-  s.add_development_dependency 'rake', '~> 10.3.2'
-  s.add_development_dependency 'rspec', '~> 3.1.0'
-  s.add_development_dependency 'yard', '~> 0.8.7.6'
-  s.add_development_dependency 'simplecov', '~> 0.9.1'
-  s.add_development_dependency 'rubocop', '~> 0.28.0'
+  s.add_development_dependency 'bundler', '~> 1.11'
+  s.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
+  s.add_development_dependency 'rspec', '~> 3.1' # '>= 3.1.0' would be redundant
+  s.add_development_dependency 'yard', '~> 0.8', '>= 0.8.7.6'
+  s.add_development_dependency 'simplecov', '~> 0.11', '>= 0.11.2'
+  s.add_development_dependency 'rubocop', '~> 0.40.0'
 
-  s.add_runtime_dependency 'gli', '2.12.2'
-  s.add_runtime_dependency 'gems', '0.8.3'
-  s.add_runtime_dependency 'highline', '1.6.21'
-  s.add_runtime_dependency 'clipboard', '1.0.5'
-  s.add_runtime_dependency 'rainbow', '2.0.0'
-  s.add_runtime_dependency 'will_paginate', '3.0.7'
+  s.add_runtime_dependency 'gli', '~> 2.12', '>= 2.12.2'
+  s.add_runtime_dependency 'gems', '~> 0.8', '>= 0.8.3'
+  s.add_runtime_dependency 'highline', '~> 1.6', '>= 1.6.21'
+  s.add_runtime_dependency 'clipboard', '~> 1.0', '>= 1.0.5'
+  s.add_runtime_dependency 'rainbow', '~> 2.0', '>= 2.0.0'
+  s.add_runtime_dependency 'will_paginate', '~> 3.0', '>= 3.0.3'
 end

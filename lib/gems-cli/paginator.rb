@@ -4,7 +4,7 @@ class Paginator
   attr_reader :pages, :total_entries
   attr_accessor :ary, :per_page, :page, :paged_results
 
-  def initialize args={}
+  def initialize(args = {})
     @ary = args[:ary] || []
     @page = 1
     @per_page = args[:per_page] || 10
@@ -13,7 +13,7 @@ class Paginator
     @pages = @paged_results.total_pages
   end
 
-  def [] *args
+  def [](*args)
     @ary[*args]
   end
 

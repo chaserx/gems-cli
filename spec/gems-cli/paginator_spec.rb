@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'gems-cli/paginator'
 
 describe Paginator do
-  subject { Paginator.new(ary: (1..100).to_a)}
+  subject { Paginator.new(ary: (1..100).to_a) }
 
   describe '#first_page?' do
     it 'returns true if on the first page' do
@@ -48,7 +48,7 @@ describe Paginator do
     end
 
     context 'when on page 2' do
-      subject { Paginator.new(ary: (1..100).to_a, page: 2)}
+      subject { Paginator.new(ary: (1..100).to_a, page: 2) }
 
       before { subject.next_page }
 
@@ -76,7 +76,7 @@ describe Paginator do
     end
 
     context 'when on page 2' do
-      subject { Paginator.new(ary: (1..100).to_a, page: 2)}
+      subject { Paginator.new(ary: (1..100).to_a, page: 2) }
 
       it 'returns 1..10' do
         expect(subject.current_page).to eq((1..10).to_a)

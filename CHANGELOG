@@ -9,3 +9,5 @@ Version 0.1.1: require at least ruby 1.9
 Version 0.1.4: update gemspec, remove rdoc for yard, add some more documentation
 
 Version 0.1.7: add support for getting gem versions
+
+Version 0.1.8: update gem dependencies; clean out unused file
