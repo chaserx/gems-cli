@@ -20,15 +20,15 @@ spec = Gem::Specification.new do |s|
   s.require_paths << 'lib'
   s.bindir = 'bin'
   s.executables << 'gems'
-  s.required_ruby_version = '>= 2.1.9'
+  s.required_ruby_version = '>= 2.3.8'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
 
   s.add_development_dependency 'bundler', '~> 1.11'
-  s.add_development_dependency 'rake', '~> 11.1', '>= 11.1.2'
-  s.add_development_dependency 'rspec', '~> 3.4' # '>= 3.4.0' would be redundant
-  s.add_development_dependency 'yard', '~> 0.8', '>= 0.8.7.6'
-  s.add_development_dependency 'simplecov', '~> 0.11', '>= 0.11.2'
-  s.add_development_dependency 'rubocop', '~> 0.40.0'
+  s.add_development_dependency 'rake', '~> 12.3'
+  s.add_development_dependency 'rspec', '~> 3.8'
+  s.add_development_dependency 'yard', '~> 0.9'
+  s.add_development_dependency 'simplecov', '~> 0.16'
+  s.add_development_dependency 'rubocop', '>= 0.49.0'
 
   s.add_runtime_dependency 'gli', '~> 2.14', '>= 2.14.0'
   s.add_runtime_dependency 'gems', '~> 0.8', '>= 0.8.3'
