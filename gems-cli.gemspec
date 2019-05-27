@@ -32,7 +32,7 @@ spec = Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'gli', '~> 2.14', '>= 2.14.0'
   s.add_runtime_dependency 'gems', '~> 0.8', '>= 0.8.3'
-  s.add_runtime_dependency 'highline', '~> 1.7', '>= 1.7.8'
+  s.add_runtime_dependency 'highline', '>= 1.7.8', '< 3.0'
   s.add_runtime_dependency 'clipboard', '~> 1.1', '>= 1.1.0'
   s.add_runtime_dependency 'rainbow', '~> 2.1', '>= 2.1.0'
   s.add_runtime_dependency 'will_paginate', '~> 3.1', '>= 3.1.0'
