@@ -23,7 +23,7 @@ spec = Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.4.0'
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
 
-  s.add_development_dependency 'bundler', '~> 1.17'
+  s.add_development_dependency 'bundler', '~> 2.0'
   s.add_development_dependency 'rake', '~> 12.3'
   s.add_development_dependency 'rspec', '~> 3.8'
   s.add_development_dependency 'yard', '~> 0.9'
