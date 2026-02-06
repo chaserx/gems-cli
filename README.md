@@ -83,3 +83,4 @@ To release a new version, update the version number in `version.rb`, and then ru
 
 - [moneypenney](https://github.com/moneypenny)
 - [jdickey](https://github.com/jdickey)
+- [jdlubrano](https://github.com/jdlubrano)
