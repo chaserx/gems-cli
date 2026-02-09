@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'yard', '~> 0.9'
   s.add_development_dependency 'rubocop', '>= 0.49.0'
   s.add_development_dependency 'simplecov', '~> 0.21'
+  s.add_development_dependency 'gem-release', '>= 2.0'
 
   s.add_runtime_dependency 'gli', '~> 2.14', '>= 2.14.0'
   s.add_runtime_dependency 'gems', '>= 0.8.3', '< 2.0'
