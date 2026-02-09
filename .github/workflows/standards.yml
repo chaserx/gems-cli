@@ -12,4 +12,4 @@ jobs:
     - name: Standard Ruby
       uses: standardrb/standard-ruby-action@v1
       with:
-        auto-fix: false
+        autofix: false
