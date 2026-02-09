@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
                     Then you can copy formatted gem details for your Gemfile.
                   HEREDOC
   s.license = 'MIT'
+  s.metadata["homepage_uri"] = s.homepage
+  s.metadata["source_code_uri"] = "https://github.com/chaserx/gems-cli"
   gemspec = File.basename(__FILE__)
   s.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
     ls.readlines("\x0", chomp: true).reject do |f|
