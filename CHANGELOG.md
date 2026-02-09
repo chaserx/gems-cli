@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/chaserx/gems-cli/tree/HEAD)
+## [v0.1.13](https://github.com/chaserx/gems-cli/tree/v0.1.13) (2026-02-09)
 
-[Full Changelog](https://github.com/chaserx/gems-cli/compare/v0.1.12...HEAD)
+[Full Changelog](https://github.com/chaserx/gems-cli/compare/v0.1.12...v0.1.13)
 
 **Merged pull requests:**
 
+- Bump version to v0.1.13 [\#36](https://github.com/chaserx/gems-cli/pull/36) ([chaserx](https://github.com/chaserx))
 - Add support for Bundler and GitHub Actions updates [\#35](https://github.com/chaserx/gems-cli/pull/35) ([chaserx](https://github.com/chaserx))
 - Update config files, linting utility, and add workflows [\#34](https://github.com/chaserx/gems-cli/pull/34) ([chaserx](https://github.com/chaserx))
 
