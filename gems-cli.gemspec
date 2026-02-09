@@ -1,21 +1,21 @@
 # Ensure we require the local version and not one we might have installed already
-require File.join([File.dirname(__FILE__),'lib','gems-cli','version.rb'])
+require File.join([File.dirname(__FILE__), "lib", "gems-cli", "version.rb"])
 Gem::Specification.new do |s|
-  s.name = 'gems-cli'
+  s.name = "gems-cli"
   s.version = GemsCli::VERSION
-  s.authors = ['Chase Southard']
-  s.email = 'chase.southard@gmail.com'
-  s.homepage = 'https://github.com/chaserx/gems-cli'
+  s.authors = ["Chase Southard"]
+  s.email = "chase.southard@gmail.com"
+  s.homepage = "https://github.com/chaserx/gems-cli"
   s.platform = Gem::Platform::RUBY
   s.summary = <<~HEREDOC
-                Search rubygems.org from the command line.\n
-                Copy formatted gem details for your Gemfile.
-              HEREDOC
+    Search rubygems.org from the command line.\n
+    Copy formatted gem details for your Gemfile.
+  HEREDOC
   s.description = <<~HEREDOC
-                    Search rubygems.org from the command line.\n
-                    Then you can copy formatted gem details for your Gemfile.
-                  HEREDOC
-  s.license = 'MIT'
+    Search rubygems.org from the command line.\n
+    Then you can copy formatted gem details for your Gemfile.
+  HEREDOC
+  s.license = "MIT"
   s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/chaserx/gems-cli"
   gemspec = File.basename(__FILE__)
@@ -25,25 +25,25 @@ Gem::Specification.new do |s|
         f.start_with?(*%w[bin/ Gemfile .gitignore .rspec spec/ .github/ .standard.yml .rubocop.yml])
     end
   end
-  s.require_paths << 'lib'
-  s.bindir = 'bin'
-  s.executables << 'gems'
-  s.required_ruby_version = '>= 3.2.10'
+  s.require_paths << "lib"
+  s.bindir = "bin"
+  s.executables << "gems"
+  s.required_ruby_version = ">= 3.2.10"
   s.post_install_message = "Thanks for installing! \ngems-cli usage: `gems s chase`"
 
-  s.add_development_dependency 'bundler', '>= 2.0'
-  s.add_development_dependency 'rake', '~> 12.3'
-  s.add_development_dependency 'rspec', '~> 3.8'
-  s.add_development_dependency 'yard', '~> 0.9'
-  s.add_development_dependency 'simplecov', '~> 0.21'
-  s.add_development_dependency 'standard', '>=1.31.0'
-  s.add_development_dependency 'gem-release', '>= 2.0'
-  s.add_development_dependency 'github_changelog_generator', '~> 1.16'
+  s.add_development_dependency "bundler", ">= 2.0"
+  s.add_development_dependency "rake", "~> 12.3"
+  s.add_development_dependency "rspec", "~> 3.8"
+  s.add_development_dependency "yard", "~> 0.9"
+  s.add_development_dependency "simplecov", "~> 0.21"
+  s.add_development_dependency "standard", ">=1.31.0"
+  s.add_development_dependency "gem-release", ">= 2.0"
+  s.add_development_dependency "github_changelog_generator", "~> 1.16"
 
-  s.add_runtime_dependency 'gli', '~> 2.14', '>= 2.14.0'
-  s.add_runtime_dependency 'gems', '>= 0.8.3', '< 2.0'
-  s.add_runtime_dependency 'highline', '>= 1.7.8', '< 4.0'
-  s.add_runtime_dependency 'clipboard', '~> 1.1', '>= 1.1.0'
-  s.add_runtime_dependency 'rainbow', '>= 2.1.0', '< 4.0'
-  s.add_runtime_dependency 'will_paginate', '~> 3.1', '>= 3.1.0'
+  s.add_runtime_dependency "gli", "~> 2.14", ">= 2.14.0"
+  s.add_runtime_dependency "gems", ">= 0.8.3", "< 2.0"
+  s.add_runtime_dependency "highline", ">= 1.7.8", "< 4.0"
+  s.add_runtime_dependency "clipboard", "~> 1.1", ">= 1.1.0"
+  s.add_runtime_dependency "rainbow", ">= 2.1.0", "< 4.0"
+  s.add_runtime_dependency "will_paginate", "~> 3.1", ">= 3.1.0"
 end
