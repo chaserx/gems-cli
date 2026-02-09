@@ -35,8 +35,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 12.3'
   s.add_development_dependency 'rspec', '~> 3.8'
   s.add_development_dependency 'yard', '~> 0.9'
-  s.add_development_dependency 'rubocop', '>= 0.49.0'
   s.add_development_dependency 'simplecov', '~> 0.21'
+  s.add_development_dependency 'standard', '>=1.31.0'
   s.add_development_dependency 'gem-release', '>= 2.0'
   s.add_development_dependency 'github_changelog_generator', '~> 1.16'
 
