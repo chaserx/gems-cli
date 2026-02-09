@@ -8,11 +8,11 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/chaserx/gems-cli"
   s.platform = Gem::Platform::RUBY
   s.summary = <<~HEREDOC
-    Search rubygems.org from the command line.\n
+    Search rubygems.org from the command line.
     Copy formatted gem details for your Gemfile.
   HEREDOC
   s.description = <<~HEREDOC
-    Search rubygems.org from the command line.\n
+    Search rubygems.org from the command line.
     Then you can copy formatted gem details for your Gemfile.
   HEREDOC
   s.license = "MIT"
