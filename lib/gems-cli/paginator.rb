@@ -1,4 +1,6 @@
-require 'will_paginate/array'
+# frozen_string_literal: true
+
+require "will_paginate/array"
 
 class Paginator
   attr_reader :pages, :total_entries

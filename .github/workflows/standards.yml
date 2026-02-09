@@ -1,0 +1,15 @@
+name: Standard Ruby
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+    steps:
+    - name: Standard Ruby
+      uses: standardrb/standard-ruby-action@v1
+      with:
+        autofix: false
