@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
     ls.readlines("\x0", chomp: true).reject do |f|
       (f == gemspec) ||
-        f.start_with?(*%w[bin/ Gemfile .gitignore .rspec spec/ .github/ .standard.yml .rubocop.yml])
+        f.start_with?(*%w[Gemfile .gitignore .rspec spec/ .github/ .standard.yml .rubocop.yml mise.toml])
     end
   end
   s.require_paths << "lib"
