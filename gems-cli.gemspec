@@ -7,14 +7,14 @@ spec = Gem::Specification.new do |s|
   s.email = 'chase.southard@gmail.com'
   s.homepage = 'https://github.com/chaserx/gems-cli'
   s.platform = Gem::Platform::RUBY
-  s.summary = <<-END.gsub(/^ {14}/, '')
-              Search rubygems.org from the command line.
-              Copy formatted gem details for your Gemfile.
-              END
-  s.description = <<-END.gsub(/^ {18}/, '')
-                  Search rubygems.org from the command line.
-                  Then you can copy formatted gem details for your Gemfile.
-                  END
+  s.summary = <<~HEREDOC
+                Search rubygems.org from the command line.\n
+                Copy formatted gem details for your Gemfile.
+              HEREDOC
+  s.description = <<~HEREDOC
+                    Search rubygems.org from the command line.\n
+                    Then you can copy formatted gem details for your Gemfile.
+                  HEREDOC
   s.license = 'MIT'
   s.files = `git ls-files`.split(' ')
   s.require_paths << 'lib'
