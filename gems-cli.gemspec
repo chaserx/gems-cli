@@ -1,6 +1,6 @@
 # Ensure we require the local version and not one we might have installed already
 require File.join([File.dirname(__FILE__),'lib','gems-cli','version.rb'])
-spec = Gem::Specification.new do |s|
+Gem::Specification.new do |s|
   s.name = 'gems-cli'
   s.version = GemsCli::VERSION
   s.authors = ['Chase Southard']
