@@ -87,9 +87,11 @@ GEM
       rake (>= 10.0)
     gli (2.22.2)
       ostruct
-    highline (2.1.0)
+    highline (3.1.2)
+      reline
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
+    io-console (0.8.2)
     io-endpoint (0.17.2)
     io-event (1.14.2)
     io-stream (0.11.1)
@@ -125,6 +127,8 @@ GEM
     rainbow (3.1.1)
     rake (13.3.1)
     regexp_parser (2.10.0)
+    reline (0.6.3)
+      io-console (~> 0.5)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
