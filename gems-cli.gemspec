@@ -45,5 +45,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "highline", ">= 1.7.8", "< 4.0"
   s.add_runtime_dependency "clipboard", "~> 1.1", ">= 1.1.0"
   s.add_runtime_dependency "rainbow", ">= 2.1.0", "< 4.0"
-  s.add_runtime_dependency "will_paginate", "~> 3.1", ">= 3.1.0"
+  s.add_runtime_dependency "will_paginate", ">= 3.1", "< 5.0"
 end
