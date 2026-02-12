@@ -187,7 +187,7 @@ GEM
     unicode-emoji (4.2.0)
     uri (1.1.1)
     will_paginate (3.3.1)
-    yard (0.9.37)
+    yard (0.9.38)
 
 PLATFORMS
   arm64-darwin-24
